@@ -1,6 +1,9 @@
 // Runner for the barista out-of-office entry: it copies entry.txt into the
 // grader's output directory. The line itself lives in entry.txt, never in
 // this file, so editing the reply never means touching the code.
+// This runner reads the reply text out of entry.txt, trims the edges,
+// checks the length stays inside the 1–280 character window,
+// then writes that same text into the grader's output folder.
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
